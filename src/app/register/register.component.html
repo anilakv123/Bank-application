@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form (ngSubmit)="register()" class="login" [formGroup]="registerForm">
+                
+				<div class="login__field">
+                    <div class="log">
+                        <h2>REGISTER</h2>
+                    </div>
+                    
+					<i class="login__icon fas fa-user"></i>
+
+					<input name="uname" formControlName="uname" type="text" class="login__input" placeholder="User Name">
+				</div>
+				<div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red">
+					Invalid User Name
+				</div>
+                <div>
+
+					<input name="acno" formControlName="acno" type="text" class="login__input" placeholder="Account number">
+				</div>
+				<div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red">
+					Invalid Account Number
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input  name="pswd" formControlName="pswd" type="password" class="login__input" placeholder="Password">
+				</div>
+				<div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red">
+					Invalid Password
+				</div>
+				<button class="button login__submit" type="submit">
+					<span class="button__text">Register Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+                
+			</form>
+            <div class="colm-form">
+                <h5><span>New User?Click here to</span><a href="">Login</a></h5>
+
+            </div>
+			
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+
+
